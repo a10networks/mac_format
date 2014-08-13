@@ -6,7 +6,7 @@ describe MacFormatValidator do
 
   context "with valid macs" do
 
-    let(:valid_macs) { %w() }
+    let(:valid_macs) { %w(aabbccddeeff aabbccddeeff*&^&^:: aabbccddee::ff 11-22-33-44-55-66) }
 
     it "should be happy" do
       valid_macs.each do |mac|
@@ -18,7 +18,7 @@ describe MacFormatValidator do
 
   context "with invalid macs" do
 
-    let(:invalid_macs) { %w() }
+    let(:invalid_macs) { %w(aabbccddeeffaa aa) }
 
     it "shouldn't be happy" do
       invalid_macs.each do |mac|
